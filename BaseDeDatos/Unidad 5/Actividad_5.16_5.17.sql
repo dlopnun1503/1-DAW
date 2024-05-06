@@ -1,0 +1,180 @@
+DROP DATABASE IF EXISTS libros_almacen;
+CREATE DATABASE IF NOT EXISTS libros_almacen
+CHARACTER SET UTF8MB4 COLLATE UTF8MB4_GENERAL_CI;
+
+USE libros_almacen;
+DROP TABLE IF EXISTS libros;
+CREATE TABLE IF NOT EXISTS libros (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(50) NOT NULL,
+    autor VARCHAR(50) NOT NULL,
+    precio DECIMAL(10 , 2 ) NOT NULL
+);
+
+USE libros_almacen;
+DROP TABLE IF EXISTS educacion;
+CREATE TABLE IF NOT EXISTS educacion (
+    libro_id INT UNSIGNED,
+    curso VARCHAR(10) NOT NULL,
+    asignatura VARCHAR(20) NOT NULL,
+    PRIMARY KEY (libro_id)
+);
+
+USE libros_almacen;
+DROP TABLE IF EXISTS lectura;
+CREATE TABLE IF NOT EXISTS lectura (
+    libro_id INT UNSIGNED,
+    tipo VARCHAR(20) NOT NULL,
+    genero VARCHAR(20) NOT NULL,
+    PRIMARY KEY (libro_id)
+);
+
+USE libros_almacen;
+DROP TABLE IF EXISTS provincias;
+CREATE TABLE IF NOT EXISTS provincias (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(25) NOT NULL,
+    almacen_id INT UNSIGNED
+);
+
+USE libros_almacen;
+DROP TABLE IF EXISTS poblaciones;
+CREATE TABLE IF NOT EXISTS poblaciones (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(25) NOT NULL,
+    habitantes INT UNSIGNED NOT NULL,
+    provincia_id INT UNSIGNED
+);
+
+USE libros_almacen;
+DROP TABLE IF EXISTS pedidos;
+CREATE TABLE IF NOT EXISTS pedidos (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE NOT NULL,
+    envio VARCHAR(20) NOT NULL,
+    socio_id INT UNSIGNED
+);
+
+USE libros_almacen;
+DROP TABLE IF EXISTS almacenes;
+CREATE TABLE IF NOT EXISTS almacenes (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(25) NOT NULL,
+    fecha DATE NOT NULL,
+    provincia_id INT UNSIGNED
+);
+
+USE libros_almacen;
+DROP TABLE IF EXISTS librosPedidos;
+CREATE TABLE IF NOT EXISTS librosPedidos (
+    pedido_id INT UNSIGNED,
+    libro_id INT UNSIGNED,
+    unidades INT UNSIGNED NOT NULL,
+    precio DECIMAL(10 , 2 ),
+    PRIMARY KEY (pedido_id , libro_id)
+);
+
+USE libros_almacen;
+DROP TABLE IF EXISTS almacenesLibros;
+CREATE TABLE IF NOT EXISTS almacenesLibros (
+    almacen_id INT UNSIGNED,
+    libro_id INT UNSIGNED,
+    stock INT UNSIGNED NOT NULL,
+    PRIMARY KEY (almacen_id , libro_id)
+);
+
+USE libros_almacen;
+DROP TABLE IF EXISTS socios;
+CREATE TABLE IF NOT EXISTS socios (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(25) NOT NULL,
+    codsocio CHAR(7) UNIQUE NOT NULL,
+    telefono CHAR(13) NOT NULL,
+    dni CHAR(9) UNIQUE NOT NULL,
+    poblacion_id INT UNSIGNED,
+    socio_avalista_id INT UNSIGNED
+);
+
+ALTER TABLE educacion 
+ADD CONSTRAINT FOREIGN KEY(libro_id) REFERENCES libros(id)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE lectura 
+ADD CONSTRAINT FOREIGN KEY(libro_id) REFERENCES libros(id)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE provincias 
+ADD CONSTRAINT FOREIGN KEY(almacen_id) REFERENCES almacenes(id)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE poblaciones 
+ADD CONSTRAINT FOREIGN KEY(provincia_id) REFERENCES provincias(id)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE pedidos 
+ADD CONSTRAINT FOREIGN KEY(socio_id) REFERENCES socios(id)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE almacenes 
+ADD CONSTRAINT FOREIGN KEY(provincia_id) REFERENCES provincias(id)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE librosPedidos 
+ADD CONSTRAINT FOREIGN KEY(pedido_id) REFERENCES pedidos(id)
+ON DELETE RESTRICT ON UPDATE CASCADE,
+ADD CONSTRAINT FOREIGN KEY(libro_id) REFERENCES libros(id)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE almacenesLibros 
+ADD CONSTRAINT FOREIGN KEY(almacen_id) REFERENCES almacenes(id)
+ON DELETE RESTRICT ON UPDATE CASCADE,
+ADD CONSTRAINT FOREIGN KEY(libro_id) REFERENCES libros(id)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE socios 
+ADD CONSTRAINT FOREIGN KEY(poblacion_id) REFERENCES poblaciones(id)
+ON DELETE RESTRICT ON UPDATE CASCADE,
+ADD CONSTRAINT FOREIGN KEY(socio_avalista_id) REFERENCES socios(id)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+USE libros_almacen;
+DROP TABLE IF EXISTS autores;
+CREATE TABLE IF NOT EXISTS autores (
+   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+   nombre VARCHAR(20),
+   nacionalidad VARCHAR(20),
+   fecha_nac DATE,
+   estilo VARCHAR(50)
+);
+
+ALTER TABLE libros
+DROP COLUMN autor;
+
+ALTER TABLE libros
+ADD COLUMN autor_id INT UNSIGNED,
+ADD CONSTRAINT FOREIGN KEY(autor_id) REFERENCES autores(id)
+ON DELETE RESTRICT ON UPDATE CASCADE,
+ADD COLUMN isbn CHAR(13) UNIQUE,
+ADD COLUMN ean CHAR(13) UNIQUE,
+ADD COLUMN categorias VARCHAR(100),
+ADD COLUMN tipo_lector VARCHAR(20) CHECK(tipo_lector IN ('Infantil', 'Juvenil', 'Adulto', 'Mayor')),
+ADD COLUMN fecha_ed DATE;
+
+ALTER TABLE socios
+ADD CONSTRAINT Un_telefono UNIQUE(telefono),
+ADD COLUMN direccion VARCHAR(60),
+ADD COLUMN poblacion VARCHAR(30),
+ADD COLUMN c_postal CHAR(5),
+ADD COLUMN provincia VARCHAR(30),
+ADD COLUMN nacionalidad VARCHAR(30),
+ADD COLUMN valoracion FLOAT(4,2) UNSIGNED CHECK(valoracion BETWEEN 0 AND 10),
+CHANGE COLUMN nombre socio VARCHAR(255);
+
+ALTER TABLE librosPedidos
+ADD COLUMN descuento FLOAT(4,3) UNSIGNED CHECK(descuento BETWEEN 0 AND 1),
+ADD COLUMN importe DECIMAL(10,2);
+
+CREATE INDEX InTitulolibros ON libros(titulo);
+CREATE INDEX InFechaPedidos ON pedidos(fecha);
+CREATE INDEX InNombreAlmacenes ON almacenes(nombre);
+CREATE INDEX InSociosNom ON socios(socio);

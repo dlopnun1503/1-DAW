@@ -1,0 +1,55 @@
+DROP DATABASE IF EXISTS instituto;
+CREATE DATABASE IF NOT EXISTS instituto
+CHARACTER SET UTF8MB4 COLLATE UTF8MB4_GENERAL_CI;
+
+USE instituto;
+DROP TABLE IF EXISTS departamentos;
+CREATE TABLE IF NOT EXISTS departamentos(
+   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+   nombre VARCHAR(25) NOT NULL,
+   codigo_dept CHAR(3) UNIQUE NOT NULL
+);
+
+USE instituto;
+DROP TABLE IF EXISTS profesores;
+CREATE TABLE IF NOT EXISTS profesores(
+   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+   nombre VARCHAR(25) NOT NULL,
+   apellidos VARCHAR(50) NOT NULL,
+   email VARCHAR(50) UNIQUE,
+   fecha_ingreso DATE NOT NULL,
+   especialidad VARCHAR(25) NOT NULL,
+   nrp CHAR(9) UNIQUE NOT NULL,
+   departamento_id INT UNSIGNED,
+   FOREIGN KEY (departamento_id) REFERENCES departamentos(id) 
+   ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+USE instituto;
+DROP TABLE IF EXISTS asignaturas;
+CREATE TABLE IF NOT EXISTS asignaturas(
+   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+   nombre VARCHAR(25) NOT NULL,
+   nivel CHAR(4) NOT NULL,
+   cod_asig CHAR(7) UNIQUE NOT NULL,
+   horas TINYINT UNSIGNED NOT NULL,
+   departamento_id INT UNSIGNED,
+   FOREIGN KEY (departamento_id) REFERENCES departamentos(id) 
+   ON DELETE RESTRICT ON UPDATE CASCADE
+   );
+
+USE instituto;
+DROP TABLE IF EXISTS horario;
+CREATE TABLE IF NOT EXISTS horario(
+   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+   dia TINYINT CHECK (dia BETWEEN 1 AND 5),
+   tramo TINYINT CHECK (tramo BETWEEN 1 AND 6),
+   turno ENUM ('1', '2'),
+   horas TINYINT UNSIGNED,
+   asignatura_id INT UNSIGNED NOT NULL,
+   FOREIGN KEY (asignatura_id) REFERENCES asignaturas(id) 
+   ON DELETE RESTRICT ON UPDATE CASCADE,
+   profesor_id INT UNSIGNED NOT NULL,
+   FOREIGN KEY (profesor_id) REFERENCES profesores(id) 
+   ON DELETE RESTRICT ON UPDATE CASCADE
+);

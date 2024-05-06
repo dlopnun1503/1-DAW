@@ -1,0 +1,1167 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="maratoon">
+	<table_structure name="carreras">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="Nombre" Type="varchar(30)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="Ciudad" Type="varchar(20)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="Distancia" Type="int(10) unsigned" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="MesCelebracion" Type="tinyint(3) unsigned" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<key Table="carreras" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="carreras" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="5" Create_time="2024-02-02 10:21:29" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="carreras">
+	<row>
+		<field name="id">1</field>
+		<field name="Nombre">Nutrias Pantaneras</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="Distancia">11000</field>
+		<field name="MesCelebracion">10</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="Nombre">Media Martoon Sevilla</field>
+		<field name="Ciudad">Sevilla</field>
+		<field name="Distancia">22000</field>
+		<field name="MesCelebracion">6</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="Nombre">Media Martoon Jerez</field>
+		<field name="Ciudad">Jerez</field>
+		<field name="Distancia">22000</field>
+		<field name="MesCelebracion">5</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="Nombre">Salida Sanluqueña</field>
+		<field name="Ciudad">Sanlucar de Bda.</field>
+		<field name="Distancia">11500</field>
+		<field name="MesCelebracion">3</field>
+	</row>
+	</table_data>
+	<table_structure name="categorias">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="Nombrecorto" Type="char(3)" Null="YES" Key="UNI" Default="NULL" Extra="" Comment="" />
+		<field Field="Nombre" Type="varchar(20)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="Descripcion" Type="varchar(30)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<key Table="categorias" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="8" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="categorias" Non_unique="0" Key_name="Nombrecorto" Seq_in_index="1" Column_name="Nombrecorto" Collation="A" Cardinality="8" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="categorias" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="8" Avg_row_length="2048" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="9" Create_time="2024-02-02 10:21:28" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="categorias">
+	<row>
+		<field name="id">1</field>
+		<field name="Nombrecorto">INF</field>
+		<field name="Nombre">Infantil</field>
+		<field name="Descripcion">Menores de 12 años</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="Nombrecorto">JUN</field>
+		<field name="Nombre">Junior</field>
+		<field name="Descripcion">Menores de 15 años</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="Nombrecorto">JUV</field>
+		<field name="Nombre">Juvenil</field>
+		<field name="Descripcion">Menores de 18 años</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="Nombrecorto">SNA</field>
+		<field name="Nombre">Senior A</field>
+		<field name="Descripcion">Menores de 30 años</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="Nombrecorto">SNB</field>
+		<field name="Nombre">Senior B</field>
+		<field name="Descripcion">Menores de 40 años</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="Nombrecorto">VTA</field>
+		<field name="Nombre">Veteranos A</field>
+		<field name="Descripcion">Menores de 50 años</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="Nombrecorto">VTB</field>
+		<field name="Nombre">Veteranos B</field>
+		<field name="Descripcion">Menores de 60 años</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="Nombrecorto">VTC</field>
+		<field name="Nombre">Veteranos C</field>
+		<field name="Descripcion">A partir de 60 años</field>
+	</row>
+	</table_data>
+	<table_structure name="clas_femenina">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="nombre" Type="varchar(67)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="edad" Type="int(2) unsigned" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="ciudad" Type="varchar(30)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="sexo" Type="enum('','H','M')" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="club" Type="char(3)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="categoria" Type="char(3)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="tiempo" Type="time(6)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<options Name="clas_femenina" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="7" Avg_row_length="2340" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2024-02-20 10:28:50" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="clas_femenina">
+	<row>
+		<field name="id">7</field>
+		<field name="nombre">Fernández Pérez, Macarena</field>
+		<field name="edad">43</field>
+		<field name="ciudad">Villamartín</field>
+		<field name="sexo">M</field>
+		<field name="club">CAV</field>
+		<field name="categoria">VTA</field>
+		<field name="tiempo">00:30:30.009412</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="nombre">Rios Pérez, Josefa</field>
+		<field name="edad">33</field>
+		<field name="ciudad">Villamartín</field>
+		<field name="sexo">M</field>
+		<field name="club">CAV</field>
+		<field name="categoria">SNB</field>
+		<field name="tiempo">00:36:20.001546</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="nombre">Rubiales Alva, Eva</field>
+		<field name="edad">43</field>
+		<field name="ciudad">Ubrique</field>
+		<field name="sexo">M</field>
+		<field name="club">NUT</field>
+		<field name="categoria">VTA</field>
+		<field name="tiempo">00:37:10.001480</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="nombre">Pérez Moreno, María</field>
+		<field name="edad">48</field>
+		<field name="ciudad">Ubrique</field>
+		<field name="sexo">M</field>
+		<field name="club">NUT</field>
+		<field name="categoria">VTA</field>
+		<field name="tiempo">00:39:10.000003</field>
+	</row>
+	<row>
+		<field name="id">11</field>
+		<field name="nombre">Romero Alva, Almudena</field>
+		<field name="edad">37</field>
+		<field name="ciudad">Arcos</field>
+		<field name="sexo">M</field>
+		<field name="club">ADJ</field>
+		<field name="categoria">SNB</field>
+		<field name="tiempo">00:55:10.001483</field>
+	</row>
+	<row>
+		<field name="id">14</field>
+		<field name="nombre">García Almeida, Cristina</field>
+		<field name="edad">46</field>
+		<field name="ciudad">Villamartín</field>
+		<field name="sexo">M</field>
+		<field name="club">CAV</field>
+		<field name="categoria">VTA</field>
+		<field name="tiempo">01:00:00.000000</field>
+	</row>
+	<row>
+		<field name="id">15</field>
+		<field name="nombre">Jiménez Pérez, Romira</field>
+		<field name="edad">39</field>
+		<field name="ciudad">Arcos</field>
+		<field name="sexo">M</field>
+		<field name="club">ADJ</field>
+		<field name="categoria">SNB</field>
+		<field name="tiempo">01:10:30.009068</field>
+	</row>
+	</table_data>
+	<table_structure name="clasificacion">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="" Default="0" Extra="" Comment="" />
+		<field Field="nombre" Type="varchar(67)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="edad" Type="int(2) unsigned" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="ciudad" Type="varchar(30)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="sexo" Type="enum('','H','M')" Null="YES" Key="" Default="''" Extra="" Comment="" />
+		<field Field="club" Type="char(3)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="categoria" Type="char(3)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="tiempo" Type="time(6)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<options Name="clasificacion" Comment="VIEW" />
+	</table_structure>
+	<table_structure name="clubs">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="NombreCorto" Type="char(3)" Null="YES" Key="UNI" Default="NULL" Extra="" Comment="" />
+		<field Field="Nombre" Type="varchar(30)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="Ciudad" Type="varchar(20)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="FecFundacion" Type="date" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="NumSocios" Type="int(10) unsigned" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<key Table="clubs" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="5" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="clubs" Non_unique="0" Key_name="NombreCorto" Seq_in_index="1" Column_name="NombreCorto" Collation="A" Cardinality="5" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="clubs" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="5" Avg_row_length="3276" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="6" Create_time="2024-02-02 10:21:29" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="clubs">
+	<row>
+		<field name="id">1</field>
+		<field name="NombreCorto">NUT</field>
+		<field name="Nombre">Nutrias Pantaneras</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FecFundacion">1980-04-11</field>
+		<field name="NumSocios">150</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="NombreCorto">CAV</field>
+		<field name="Nombre">Club Atletismo Villamartín</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FecFundacion">1985-04-11</field>
+		<field name="NumSocios">200</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="NombreCorto">ACG</field>
+		<field name="Nombre">Atletismo Campo de Gibraltar</field>
+		<field name="Ciudad">La Línea</field>
+		<field name="FecFundacion">1987-04-11</field>
+		<field name="NumSocios">150</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="NombreCorto">ADJ</field>
+		<field name="Nombre">Asociación Deportiva de Arcos</field>
+		<field name="Ciudad">Arcos de la Fra.</field>
+		<field name="FecFundacion">1970-04-11</field>
+		<field name="NumSocios">300</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="NombreCorto">CAF</field>
+		<field name="Nombre">Club Atletismo Fronter</field>
+		<field name="Ciudad">Jerez de la Fra.</field>
+		<field name="FecFundacion">1975-04-11</field>
+		<field name="NumSocios">220</field>
+	</row>
+	</table_data>
+	<table_structure name="corredores">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="Nombre" Type="varchar(20)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="Apellidos" Type="varchar(45)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="Ciudad" Type="varchar(30)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="FechaNacimiento" Type="date" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Sexo" Type="enum('','H','M')" Null="YES" Key="" Default="''" Extra="" Comment="" />
+		<field Field="Edad" Type="int(2) unsigned" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="Categoria_id" Type="int(10) unsigned" Null="YES" Key="MUL" Default="NULL" Extra="" Comment="" />
+		<field Field="Club_id" Type="int(10) unsigned" Null="YES" Key="MUL" Default="NULL" Extra="" Comment="" />
+		<key Table="corredores" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="66" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="corredores" Non_unique="1" Key_name="Categoria_id" Seq_in_index="1" Column_name="Categoria_id" Collation="A" Cardinality="13" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="corredores" Non_unique="1" Key_name="Club_id" Seq_in_index="1" Column_name="Club_id" Collation="A" Cardinality="11" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="corredores" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="66" Avg_row_length="248" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="67" Create_time="2024-02-02 10:21:29" Update_time="2024-04-11 09:11:31" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="corredores">
+	<row>
+		<field name="id">1</field>
+		<field name="Nombre">Juan</field>
+		<field name="Apellidos">García Pérez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1965-07-31</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">58</field>
+		<field name="Categoria_id">7</field>
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="Nombre">Juan José</field>
+		<field name="Apellidos">Pérez Morales</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1945-08-30</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">78</field>
+		<field name="Categoria_id">8</field>
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="Nombre">Eva</field>
+		<field name="Apellidos">Rubiales Alva</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1980-08-25</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">43</field>
+		<field name="Categoria_id">6</field>
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="Nombre">Josefa</field>
+		<field name="Apellidos">Rios Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1990-10-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">33</field>
+		<field name="Categoria_id">5</field>
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="Nombre">Pedro</field>
+		<field name="Apellidos">Ortega Ríos</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1994-05-14</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">29</field>
+		<field name="Categoria_id">4</field>
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="Nombre">Francisco</field>
+		<field name="Apellidos">Morales Almeida</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1970-02-01</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">54</field>
+		<field name="Categoria_id">7</field>
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="Nombre">Macarena</field>
+		<field name="Apellidos">Fernández Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1980-05-03</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">43</field>
+		<field name="Categoria_id">6</field>
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="Nombre">Jesús</field>
+		<field name="Apellidos">Romero Reguera</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1970-06-05</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">53</field>
+		<field name="Categoria_id">7</field>
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="Nombre">Pedro</field>
+		<field name="Apellidos">García Ramírez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1967-07-31</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">56</field>
+		<field name="Categoria_id">7</field>
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="Nombre">María</field>
+		<field name="Apellidos">Pérez Moreno</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1975-08-30</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">48</field>
+		<field name="Categoria_id">6</field>
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">11</field>
+		<field name="Nombre">Almudena</field>
+		<field name="Apellidos">Romero Alva</field>
+		<field name="Ciudad">Arcos</field>
+		<field name="FechaNacimiento">1986-08-25</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">37</field>
+		<field name="Categoria_id">5</field>
+		<field name="Club_id">4</field>
+	</row>
+	<row>
+		<field name="id">12</field>
+		<field name="Nombre">Francisco</field>
+		<field name="Apellidos">Pérez Amor</field>
+		<field name="Ciudad">Arcos</field>
+		<field name="FechaNacimiento">1992-10-15</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">31</field>
+		<field name="Categoria_id">5</field>
+		<field name="Club_id">4</field>
+	</row>
+	<row>
+		<field name="id">13</field>
+		<field name="Nombre">Juan</field>
+		<field name="Apellidos">Rodríguez Ríos</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1978-05-14</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">45</field>
+		<field name="Categoria_id">6</field>
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">14</field>
+		<field name="Nombre">Cristina</field>
+		<field name="Apellidos">García Almeida</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1978-02-01</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">46</field>
+		<field name="Categoria_id">6</field>
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">15</field>
+		<field name="Nombre">Romira</field>
+		<field name="Apellidos">Jiménez Pérez</field>
+		<field name="Ciudad">Arcos</field>
+		<field name="FechaNacimiento">1984-05-03</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">39</field>
+		<field name="Categoria_id">5</field>
+		<field name="Club_id">4</field>
+	</row>
+	<row>
+		<field name="id">16</field>
+		<field name="Nombre">José</field>
+		<field name="Apellidos">Rincón Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1960-06-05</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">63</field>
+		<field name="Categoria_id">8</field>
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">17</field>
+		<field name="Nombre">David</field>
+		<field name="Apellidos">Lopez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">2004-03-15</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">20</field>
+		<field name="Categoria_id">4</field>
+		<field name="Club_id" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="id">18</field>
+		<field name="Nombre">Laura</field>
+		<field name="Apellidos">López Martínez</field>
+		<field name="Ciudad">Jerez de la Fra.</field>
+		<field name="FechaNacimiento">1995-03-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">29</field>
+		<field name="Categoria_id">4</field>
+		<field name="Club_id">5</field>
+	</row>
+	<row>
+		<field name="id">19</field>
+		<field name="Nombre">David</field>
+		<field name="Apellidos">Gómez Ruiz</field>
+		<field name="Ciudad">Jerez de la Fra.</field>
+		<field name="FechaNacimiento">1990-08-20</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">33</field>
+		<field name="Categoria_id">5</field>
+		<field name="Club_id">5</field>
+	</row>
+	<row>
+		<field name="id">20</field>
+		<field name="Nombre">Ana</field>
+		<field name="Apellidos">Díaz Sánchez</field>
+		<field name="Ciudad">Jerez de la Fra.</field>
+		<field name="FechaNacimiento">1988-11-10</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">35</field>
+		<field name="Categoria_id">5</field>
+		<field name="Club_id">5</field>
+	</row>
+	<row>
+		<field name="id">21</field>
+		<field name="Nombre">Laura</field>
+		<field name="Apellidos">López Martínez</field>
+		<field name="Ciudad">Jerez de la Fra.</field>
+		<field name="FechaNacimiento">1995-03-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">29</field>
+		<field name="Categoria_id">4</field>
+		<field name="Club_id">5</field>
+	</row>
+	<row>
+		<field name="id">22</field>
+		<field name="Nombre">David</field>
+		<field name="Apellidos">Gómez Ruiz</field>
+		<field name="Ciudad">Jerez de la Fra.</field>
+		<field name="FechaNacimiento">1990-08-20</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">33</field>
+		<field name="Categoria_id">5</field>
+		<field name="Club_id">5</field>
+	</row>
+	<row>
+		<field name="id">23</field>
+		<field name="Nombre">Ana</field>
+		<field name="Apellidos">Díaz Sánchez</field>
+		<field name="Ciudad">Jerez de la Fra.</field>
+		<field name="FechaNacimiento">1988-11-10</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">35</field>
+		<field name="Categoria_id">5</field>
+		<field name="Club_id">5</field>
+	</row>
+	<row>
+		<field name="id">24</field>
+		<field name="Nombre">Laura</field>
+		<field name="Apellidos">López Martínez</field>
+		<field name="Ciudad">Jerez de la Fra.</field>
+		<field name="FechaNacimiento">1995-03-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">29</field>
+		<field name="Categoria_id">4</field>
+		<field name="Club_id">5</field>
+	</row>
+	<row>
+		<field name="id">25</field>
+		<field name="Nombre">David</field>
+		<field name="Apellidos">Gómez Ruiz</field>
+		<field name="Ciudad">Jerez de la Fra.</field>
+		<field name="FechaNacimiento">1990-08-20</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">33</field>
+		<field name="Categoria_id">5</field>
+		<field name="Club_id">5</field>
+	</row>
+	<row>
+		<field name="id">26</field>
+		<field name="Nombre">Ana</field>
+		<field name="Apellidos">Díaz Sánchez</field>
+		<field name="Ciudad">Jerez de la Fra.</field>
+		<field name="FechaNacimiento">1988-11-10</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">35</field>
+		<field name="Categoria_id">5</field>
+		<field name="Club_id">5</field>
+	</row>
+	<row>
+		<field name="id">27</field>
+		<field name="Nombre">Rafel</field>
+		<field name="Apellidos">Mendoza Pérez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1965-07-31</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">58</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">28</field>
+		<field name="Nombre">María José</field>
+		<field name="Apellidos">Moreno Morales</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1945-08-30</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">78</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">29</field>
+		<field name="Nombre">Pedro</field>
+		<field name="Apellidos">Rodríguez Alva</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1986-08-25</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">37</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">30</field>
+		<field name="Nombre">Juani</field>
+		<field name="Apellidos">Ríos Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1995-10-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">28</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">31</field>
+		<field name="Nombre">Esther</field>
+		<field name="Apellidos">Pérez Ríos</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1970-05-14</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">53</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">32</field>
+		<field name="Nombre">Rafel</field>
+		<field name="Apellidos">Mendoza Pérez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1965-07-31</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">58</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">33</field>
+		<field name="Nombre">María José</field>
+		<field name="Apellidos">Moreno Morales</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1945-08-30</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">78</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">34</field>
+		<field name="Nombre">Pedro</field>
+		<field name="Apellidos">Rodríguez Alva</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1986-08-25</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">37</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">35</field>
+		<field name="Nombre">Juani</field>
+		<field name="Apellidos">Ríos Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1995-10-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">28</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">36</field>
+		<field name="Nombre">Esther</field>
+		<field name="Apellidos">Pérez Ríos</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1970-05-14</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">53</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">37</field>
+		<field name="Nombre">Rafel</field>
+		<field name="Apellidos">Mendoza Pérez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1965-07-31</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">58</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">38</field>
+		<field name="Nombre">María José</field>
+		<field name="Apellidos">Moreno Morales</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1945-08-30</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">78</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">39</field>
+		<field name="Nombre">Pedro</field>
+		<field name="Apellidos">Rodríguez Alva</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1986-08-25</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">37</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">40</field>
+		<field name="Nombre">Juani</field>
+		<field name="Apellidos">Ríos Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1995-10-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">28</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">41</field>
+		<field name="Nombre">Esther</field>
+		<field name="Apellidos">Pérez Ríos</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1970-05-14</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">53</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">42</field>
+		<field name="Nombre">Rafel</field>
+		<field name="Apellidos">Mendoza Pérez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1965-07-31</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">58</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">43</field>
+		<field name="Nombre">María José</field>
+		<field name="Apellidos">Moreno Morales</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1945-08-30</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">78</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">44</field>
+		<field name="Nombre">Pedro</field>
+		<field name="Apellidos">Rodríguez Alva</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1986-08-25</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">37</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">45</field>
+		<field name="Nombre">Juani</field>
+		<field name="Apellidos">Ríos Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1995-10-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">28</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">46</field>
+		<field name="Nombre">Esther</field>
+		<field name="Apellidos">Pérez Ríos</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1970-05-14</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">53</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">47</field>
+		<field name="Nombre">Rafel</field>
+		<field name="Apellidos">Mendoza Pérez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1965-07-31</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">58</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">48</field>
+		<field name="Nombre">María José</field>
+		<field name="Apellidos">Moreno Morales</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1945-08-30</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">78</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">49</field>
+		<field name="Nombre">Pedro</field>
+		<field name="Apellidos">Rodríguez Alva</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1986-08-25</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">37</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">50</field>
+		<field name="Nombre">Juani</field>
+		<field name="Apellidos">Ríos Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1995-10-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">28</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">51</field>
+		<field name="Nombre">Esther</field>
+		<field name="Apellidos">Pérez Ríos</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1970-05-14</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">53</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">52</field>
+		<field name="Nombre">Rafel</field>
+		<field name="Apellidos">Mendoza Pérez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1965-07-31</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">58</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">53</field>
+		<field name="Nombre">María José</field>
+		<field name="Apellidos">Moreno Morales</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1945-08-30</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">78</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">54</field>
+		<field name="Nombre">Pedro</field>
+		<field name="Apellidos">Rodríguez Alva</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1986-08-25</field>
+		<field name="Sexo">H</field>
+		<field name="Edad">37</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">55</field>
+		<field name="Nombre">Juani</field>
+		<field name="Apellidos">Ríos Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1995-10-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">28</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">56</field>
+		<field name="Nombre">Esther</field>
+		<field name="Apellidos">Pérez Ríos</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1970-05-14</field>
+		<field name="Sexo">M</field>
+		<field name="Edad">53</field>
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">57</field>
+		<field name="Nombre">Rafel</field>
+		<field name="Apellidos">Mendoza Pérez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1965-07-31</field>
+		<field name="Sexo">H</field>
+		<field name="Edad" xsi:nil="true" />
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">58</field>
+		<field name="Nombre">María José</field>
+		<field name="Apellidos">Moreno Morales</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1945-08-30</field>
+		<field name="Sexo">M</field>
+		<field name="Edad" xsi:nil="true" />
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">59</field>
+		<field name="Nombre">Pedro</field>
+		<field name="Apellidos">Rodríguez Alva</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1986-08-25</field>
+		<field name="Sexo">H</field>
+		<field name="Edad" xsi:nil="true" />
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">60</field>
+		<field name="Nombre">Juani</field>
+		<field name="Apellidos">Ríos Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1995-10-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad" xsi:nil="true" />
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">61</field>
+		<field name="Nombre">Esther</field>
+		<field name="Apellidos">Pérez Ríos</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1970-05-14</field>
+		<field name="Sexo">M</field>
+		<field name="Edad" xsi:nil="true" />
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">62</field>
+		<field name="Nombre">Rafel</field>
+		<field name="Apellidos">Mendoza Pérez</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1965-07-31</field>
+		<field name="Sexo">H</field>
+		<field name="Edad" xsi:nil="true" />
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">63</field>
+		<field name="Nombre">María José</field>
+		<field name="Apellidos">Moreno Morales</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1945-08-30</field>
+		<field name="Sexo">M</field>
+		<field name="Edad" xsi:nil="true" />
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">64</field>
+		<field name="Nombre">Pedro</field>
+		<field name="Apellidos">Rodríguez Alva</field>
+		<field name="Ciudad">Ubrique</field>
+		<field name="FechaNacimiento">1986-08-25</field>
+		<field name="Sexo">H</field>
+		<field name="Edad" xsi:nil="true" />
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">1</field>
+	</row>
+	<row>
+		<field name="id">65</field>
+		<field name="Nombre">Juani</field>
+		<field name="Apellidos">Ríos Pérez</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1995-10-15</field>
+		<field name="Sexo">M</field>
+		<field name="Edad" xsi:nil="true" />
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	<row>
+		<field name="id">66</field>
+		<field name="Nombre">Esther</field>
+		<field name="Apellidos">Pérez Ríos</field>
+		<field name="Ciudad">Villamartín</field>
+		<field name="FechaNacimiento">1970-05-14</field>
+		<field name="Sexo">M</field>
+		<field name="Edad" xsi:nil="true" />
+		<field name="Categoria_id" xsi:nil="true" />
+		<field name="Club_id">2</field>
+	</row>
+	</table_data>
+	<table_structure name="registros">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="carrera_id" Type="int(10) unsigned" Null="YES" Key="MUL" Default="NULL" Extra="" Comment="" />
+		<field Field="corredor_id" Type="int(10) unsigned" Null="YES" Key="MUL" Default="NULL" Extra="" Comment="" />
+		<field Field="Salida" Type="timestamp(6)" Null="NO" Key="" Default="current_timestamp(6)" Extra="on update current_timestamp(6)" Comment="" />
+		<field Field="Llegada" Type="datetime(6)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="TiempoInvertido" Type="time(6)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<key Table="registros" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="20" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="registros" Non_unique="1" Key_name="carrera_id" Seq_in_index="1" Column_name="carrera_id" Collation="A" Cardinality="4" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="registros" Non_unique="1" Key_name="corredor_id" Seq_in_index="1" Column_name="corredor_id" Collation="A" Cardinality="20" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="registros" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="20" Avg_row_length="819" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="21" Create_time="2024-02-02 10:21:29" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="registros">
+	<row>
+		<field name="id">1</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">1</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:45:10.000012</field>
+		<field name="TiempoInvertido">00:45:10.000012</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">2</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:35:10.000670</field>
+		<field name="TiempoInvertido">00:35:10.000670</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">3</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:37:10.001480</field>
+		<field name="TiempoInvertido">00:37:10.001480</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">4</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:36:20.001546</field>
+		<field name="TiempoInvertido">00:36:20.001546</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">5</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:35:40.000333</field>
+		<field name="TiempoInvertido">00:35:40.000333</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">6</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:40:01.000164</field>
+		<field name="TiempoInvertido">00:40:01.000164</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">7</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:30:30.009412</field>
+		<field name="TiempoInvertido">00:30:30.009412</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">8</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:38:10.000754</field>
+		<field name="TiempoInvertido">00:38:10.000754</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">9</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:48:10.000002</field>
+		<field name="TiempoInvertido">00:48:10.000002</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">10</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:39:10.000003</field>
+		<field name="TiempoInvertido">00:39:10.000003</field>
+	</row>
+	<row>
+		<field name="id">11</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">11</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:55:10.001483</field>
+		<field name="TiempoInvertido">00:55:10.001483</field>
+	</row>
+	<row>
+		<field name="id">12</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">12</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:50:20.000004</field>
+		<field name="TiempoInvertido">00:50:20.000004</field>
+	</row>
+	<row>
+		<field name="id">13</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">13</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 10:58:40.000005</field>
+		<field name="TiempoInvertido">00:58:40.000005</field>
+	</row>
+	<row>
+		<field name="id">14</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">14</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 11:00:00.000000</field>
+		<field name="TiempoInvertido">01:00:00.000000</field>
+	</row>
+	<row>
+		<field name="id">15</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">15</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 11:10:30.009068</field>
+		<field name="TiempoInvertido">01:10:30.009068</field>
+	</row>
+	<row>
+		<field name="id">16</field>
+		<field name="carrera_id">1</field>
+		<field name="corredor_id">16</field>
+		<field name="Salida">2024-02-02 10:21:29.717793</field>
+		<field name="Llegada">2012-04-11 11:09:10.000500</field>
+		<field name="TiempoInvertido">01:09:10.000500</field>
+	</row>
+	<row>
+		<field name="id">17</field>
+		<field name="carrera_id">2</field>
+		<field name="corredor_id">2</field>
+		<field name="Salida">2024-04-01 07:41:05.871366</field>
+		<field name="Llegada">2019-12-02 11:05:00.000000</field>
+		<field name="TiempoInvertido">02:05:00.000000</field>
+	</row>
+	<row>
+		<field name="id">18</field>
+		<field name="carrera_id">2</field>
+		<field name="corredor_id">3</field>
+		<field name="Salida">2024-04-01 07:41:05.871366</field>
+		<field name="Llegada">2019-12-02 11:15:00.000000</field>
+		<field name="TiempoInvertido">02:15:00.000000</field>
+	</row>
+	<row>
+		<field name="id">19</field>
+		<field name="carrera_id">2</field>
+		<field name="corredor_id">4</field>
+		<field name="Salida">2024-04-01 07:41:05.871366</field>
+		<field name="Llegada">2019-12-02 11:25:00.000000</field>
+		<field name="TiempoInvertido">02:25:00.000000</field>
+	</row>
+	<row>
+		<field name="id">20</field>
+		<field name="carrera_id">2</field>
+		<field name="corredor_id">5</field>
+		<field name="Salida">2024-04-01 07:41:05.871366</field>
+		<field name="Llegada">2019-12-02 11:30:00.000000</field>
+		<field name="TiempoInvertido">02:30:00.000000</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>

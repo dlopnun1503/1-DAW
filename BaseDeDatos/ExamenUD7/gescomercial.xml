@@ -1,0 +1,708 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="gescomercial">
+	<table_structure name="categorias">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="categoria" Type="varchar(30)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="create_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<field Field="update_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<key Table="categorias" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="categorias" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="7" Create_time="2024-04-12 09:05:08" Update_time="2024-04-12 09:05:08" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="categorias">
+	<row>
+		<field name="id">1</field>
+		<field name="categoria">Hardware</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="categoria">Software</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="categoria">Redes y Comunicaciones</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="categoria">Accesorios y Periféricos</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="categoria">Electrónica de Consumo</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="categoria">Servicios</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	</table_data>
+	<table_structure name="clientes">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="nombre" Type="varchar(40)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="direccion" Type="varchar(50)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="poblacion" Type="varchar(50)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="c_postal" Type="char(5)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="provincia" Type="varchar(50)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="nif" Type="char(9)" Null="YES" Key="UNI" Default="NULL" Extra="" Comment="" />
+		<field Field="telefono" Type="char(9)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="movil" Type="char(9)" Null="YES" Key="UNI" Default="NULL" Extra="" Comment="" />
+		<field Field="email" Type="varchar(45)" Null="YES" Key="UNI" Default="NULL" Extra="" Comment="" />
+		<field Field="create_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<field Field="update_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<key Table="clientes" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="10" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="clientes" Non_unique="0" Key_name="nif" Seq_in_index="1" Column_name="nif" Collation="A" Cardinality="10" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="clientes" Non_unique="0" Key_name="movil" Seq_in_index="1" Column_name="movil" Collation="A" Cardinality="10" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="clientes" Non_unique="0" Key_name="email" Seq_in_index="1" Column_name="email" Collation="A" Cardinality="10" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="clientes" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="10" Avg_row_length="1638" Data_length="16384" Max_data_length="0" Index_length="49152" Data_free="0" Auto_increment="11" Create_time="2024-04-12 09:05:08" Update_time="2024-04-12 09:05:08" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="clientes">
+	<row>
+		<field name="id">1</field>
+		<field name="nombre">Juan Pérez López</field>
+		<field name="direccion">Calle Mayor, 12</field>
+		<field name="poblacion">Sevilla</field>
+		<field name="c_postal">41001</field>
+		<field name="provincia">Sevilla</field>
+		<field name="nif">123456789</field>
+		<field name="telefono">954321000</field>
+		<field name="movil">654321000</field>
+		<field name="email">juan.perez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="nombre">María García Jiménez</field>
+		<field name="direccion">Calle Real, 50</field>
+		<field name="poblacion">Córdoba</field>
+		<field name="c_postal">14001</field>
+		<field name="provincia">Córdoba</field>
+		<field name="nif">234567890</field>
+		<field name="telefono">912345678</field>
+		<field name="movil">612345678</field>
+		<field name="email">maria.garcia@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="nombre">Pedro Sánchez González</field>
+		<field name="direccion">Gran Vía, 3</field>
+		<field name="poblacion">Málaga</field>
+		<field name="c_postal">29001</field>
+		<field name="provincia">Málaga</field>
+		<field name="nif">345678901</field>
+		<field name="telefono">934567890</field>
+		<field name="movil">634567890</field>
+		<field name="email">pedro.sanchez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="nombre">Ana López Martínez</field>
+		<field name="direccion">Plaza Mayor, 7</field>
+		<field name="poblacion">Granada</field>
+		<field name="c_postal">18001</field>
+		<field name="provincia">Granada</field>
+		<field name="nif">456789012</field>
+		<field name="telefono">998765432</field>
+		<field name="movil">698765432</field>
+		<field name="email">ana.lopez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="nombre">Isabel Ruiz Fernández</field>
+		<field name="direccion">Calle del Sol, 15</field>
+		<field name="poblacion">Jaén</field>
+		<field name="c_postal">23001</field>
+		<field name="provincia">Jaén</field>
+		<field name="nif">567890123</field>
+		<field name="telefono">987654321</field>
+		<field name="movil">687654321</field>
+		<field name="email">isabel.ruiz@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="nombre">David Gómez Moreno</field>
+		<field name="direccion">Paseo de la Castellana, 100</field>
+		<field name="poblacion">Madrid</field>
+		<field name="c_postal">28001</field>
+		<field name="provincia">Madrid</field>
+		<field name="nif">678901234</field>
+		<field name="telefono">976543210</field>
+		<field name="movil">676543210</field>
+		<field name="email">david.gomez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="nombre">Laura Martín Blanco</field>
+		<field name="direccion">Calle de Atocha, 12</field>
+		<field name="poblacion">Barcelona</field>
+		<field name="c_postal">08001</field>
+		<field name="provincia">Barcelona</field>
+		<field name="nif">789012345</field>
+		<field name="telefono">965432109</field>
+		<field name="movil">665432109</field>
+		<field name="email">laura.martin@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="nombre">Marcos González López</field>
+		<field name="direccion">Avenida del Rey Juan Carlos I, 5</field>
+		<field name="poblacion">Valencia</field>
+		<field name="c_postal">46001</field>
+		<field name="provincia">Valencia</field>
+		<field name="nif">890123456</field>
+		<field name="telefono">954321001</field>
+		<field name="movil">654321001</field>
+		<field name="email">marcos.gonzalez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="nombre">Sandra Ruiz Pérez</field>
+		<field name="direccion">Calle de Gran Vía, 40</field>
+		<field name="poblacion">Bilbao</field>
+		<field name="c_postal">48001</field>
+		<field name="provincia">Bilbao</field>
+		<field name="nif">901234567</field>
+		<field name="telefono">943210009</field>
+		<field name="movil">643210009</field>
+		<field name="email">sandra.ruiz@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="nombre">Alberto Gutiérrez Moreno</field>
+		<field name="direccion">Paseo de la Constitución, 25</field>
+		<field name="poblacion">Valladolid</field>
+		<field name="c_postal">47001</field>
+		<field name="provincia">Valladolid</field>
+		<field name="nif">012345678</field>
+		<field name="telefono">932100098</field>
+		<field name="movil">632100098</field>
+		<field name="email">alberto.gutierrez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	</table_data>
+	<table_structure name="lineasventas">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="venta_id" Type="int(10) unsigned" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="numero_linea" Type="smallint(5) unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="producto_id" Type="int(10) unsigned" Null="YES" Key="MUL" Default="NULL" Extra="" Comment="" />
+		<field Field="iva" Type="decimal(4,3)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="cantidad" Type="mediumint(8) unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="precio" Type="decimal(10,2)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="importe" Type="decimal(10,2)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="create_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<field Field="update_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<key Table="lineasventas" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="8" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="lineasventas" Non_unique="0" Key_name="venta_id" Seq_in_index="1" Column_name="venta_id" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="lineasventas" Non_unique="0" Key_name="venta_id" Seq_in_index="2" Column_name="numero_linea" Collation="A" Cardinality="8" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="lineasventas" Non_unique="1" Key_name="producto_id" Seq_in_index="1" Column_name="producto_id" Collation="A" Cardinality="8" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="lineasventas" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="8" Avg_row_length="2048" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="9" Create_time="2024-04-12 09:05:08" Update_time="2024-04-12 09:05:08" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="lineasventas">
+	<row>
+		<field name="id">1</field>
+		<field name="venta_id">1</field>
+		<field name="numero_linea">1</field>
+		<field name="producto_id">1</field>
+		<field name="iva">0.210</field>
+		<field name="cantidad">1</field>
+		<field name="precio">38.32</field>
+		<field name="importe">38.00</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="venta_id">1</field>
+		<field name="numero_linea">2</field>
+		<field name="producto_id">2</field>
+		<field name="iva">0.210</field>
+		<field name="cantidad">2</field>
+		<field name="precio">34.00</field>
+		<field name="importe">68.00</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="venta_id">1</field>
+		<field name="numero_linea">3</field>
+		<field name="producto_id">3</field>
+		<field name="iva">0.210</field>
+		<field name="cantidad">2</field>
+		<field name="precio">25.00</field>
+		<field name="importe">50.00</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="venta_id">1</field>
+		<field name="numero_linea">4</field>
+		<field name="producto_id">4</field>
+		<field name="iva">0.210</field>
+		<field name="cantidad">4</field>
+		<field name="precio">25.00</field>
+		<field name="importe">100.00</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="venta_id">1</field>
+		<field name="numero_linea">5</field>
+		<field name="producto_id">5</field>
+		<field name="iva">0.210</field>
+		<field name="cantidad">5</field>
+		<field name="precio">30.00</field>
+		<field name="importe">150.00</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="venta_id">2</field>
+		<field name="numero_linea">1</field>
+		<field name="producto_id">5</field>
+		<field name="iva">0.210</field>
+		<field name="cantidad">3</field>
+		<field name="precio">249.99</field>
+		<field name="importe">749.97</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="venta_id">2</field>
+		<field name="numero_linea">2</field>
+		<field name="producto_id">7</field>
+		<field name="iva">0.210</field>
+		<field name="cantidad">2</field>
+		<field name="precio">79.99</field>
+		<field name="importe">239.97</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="venta_id">2</field>
+		<field name="numero_linea">3</field>
+		<field name="producto_id">9</field>
+		<field name="iva">0.210</field>
+		<field name="cantidad">1</field>
+		<field name="precio">129.99</field>
+		<field name="importe">129.99</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	</table_data>
+	<table_structure name="productos">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="nombre" Type="varchar(80)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="descripcion" Type="text" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="ean_13" Type="char(13)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="categoria_id" Type="int(10) unsigned" Null="YES" Key="MUL" Default="NULL" Extra="" Comment="" />
+		<field Field="proveedor_id" Type="int(10) unsigned" Null="YES" Key="MUL" Default="NULL" Extra="" Comment="" />
+		<field Field="precio_coste" Type="decimal(10,2)" Null="YES" Key="" Default="0.00" Extra="" Comment="" />
+		<field Field="precio_venta" Type="decimal(10,2)" Null="YES" Key="" Default="0.00" Extra="" Comment="" />
+		<field Field="stock" Type="int(10) unsigned" Null="YES" Key="" Default="0" Extra="" Comment="" />
+		<field Field="stock_min" Type="int(10) unsigned" Null="YES" Key="" Default="0" Extra="" Comment="" />
+		<field Field="stock_max" Type="int(10) unsigned" Null="YES" Key="" Default="0" Extra="" Comment="" />
+		<field Field="estado" Type="enum('Activo','En Reposición','Descontinuado','En Promoción','Bloqueado','En tránsito')" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="create_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<field Field="update_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<key Table="productos" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="10" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="productos" Non_unique="1" Key_name="categoria_id" Seq_in_index="1" Column_name="categoria_id" Collation="A" Cardinality="10" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="productos" Non_unique="1" Key_name="proveedor_id" Seq_in_index="1" Column_name="proveedor_id" Collation="A" Cardinality="10" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="productos" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="10" Avg_row_length="1638" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="11" Create_time="2024-04-12 09:05:08" Update_time="2024-04-12 09:05:08" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="productos">
+	<row>
+		<field name="id">1</field>
+		<field name="nombre">Portátil Gamer Nitro 5</field>
+		<field name="descripcion">Portátil gaming con procesador Intel Core i5-11400H, 16 GB de RAM, SSD de 512 GB y tarjeta gráfica NVIDIA GeForce RTX 3050</field>
+		<field name="ean_13">8415870017241</field>
+		<field name="categoria_id">1</field>
+		<field name="proveedor_id">1</field>
+		<field name="precio_coste">799.99</field>
+		<field name="precio_venta">899.99</field>
+		<field name="stock">10</field>
+		<field name="stock_min">5</field>
+		<field name="stock_max">20</field>
+		<field name="estado">Activo</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="nombre">Smartphone Galaxy S23 Ultra</field>
+		<field name="descripcion">Smartphone Android con pantalla AMOLED de 6.8 pulgadas, procesador Snapdragon 8 Gen 2, 12 GB de RAM y cámara de 200 MP</field>
+		<field name="ean_13">8887310245789</field>
+		<field name="categoria_id">2</field>
+		<field name="proveedor_id">2</field>
+		<field name="precio_coste">1099.99</field>
+		<field name="precio_venta">1199.99</field>
+		<field name="stock">15</field>
+		<field name="stock_min">8</field>
+		<field name="stock_max">25</field>
+		<field name="estado">Activo</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="nombre">Smart TV 55&quot; UHD 4K HDR</field>
+		<field name="descripcion">Smart TV con pantalla LED de 55 pulgadas, resolución 4K UHD HDR, sistema operativo Android TV y conectividad Wi-Fi y Bluetooth</field>
+		<field name="ean_13">8415870017242</field>
+		<field name="categoria_id">3</field>
+		<field name="proveedor_id">3</field>
+		<field name="precio_coste">499.99</field>
+		<field name="precio_venta">549.99</field>
+		<field name="stock">20</field>
+		<field name="stock_min">10</field>
+		<field name="stock_max">30</field>
+		<field name="estado">En Reposición</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="nombre">Auriculares inalámbricos Bluetooth</field>
+		<field name="descripcion">Auriculares inalámbricos con tecnología Bluetooth 5.0, cancelación de ruido activa y hasta 8 horas de autonomía</field>
+		<field name="ean_13">8435670048375</field>
+		<field name="categoria_id">4</field>
+		<field name="proveedor_id">4</field>
+		<field name="precio_coste">59.99</field>
+		<field name="precio_venta">69.99</field>
+		<field name="stock">30</field>
+		<field name="stock_min">15</field>
+		<field name="stock_max">40</field>
+		<field name="estado">Activo</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="nombre">Impresora multifunción láser</field>
+		<field name="descripcion">Impresora multifunción láser con impresión en blanco y negro y a color, escáner y fotocopiadora</field>
+		<field name="ean_13">8479650032148</field>
+		<field name="categoria_id">5</field>
+		<field name="proveedor_id">5</field>
+		<field name="precio_coste">199.99</field>
+		<field name="precio_venta">249.99</field>
+		<field name="stock">12</field>
+		<field name="stock_min">5</field>
+		<field name="stock_max">20</field>
+		<field name="estado">Activo</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="nombre">Ratón inalámbrico ergonómico</field>
+		<field name="descripcion">Ratón inalámbrico ergonómico con diseño vertical, ideal para largas jornadas de trabajo</field>
+		<field name="ean_13">8435670048376</field>
+		<field name="categoria_id">4</field>
+		<field name="proveedor_id">6</field>
+		<field name="precio_coste">29.99</field>
+		<field name="precio_venta">34.99</field>
+		<field name="stock">25</field>
+		<field name="stock_min">10</field>
+		<field name="stock_max">35</field>
+		<field name="estado">Activo</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="nombre">Teclado inalámbrico mecánico</field>
+		<field name="descripcion">Teclado inalámbrico mecánico con interruptores Cherry MX Blue, retroiluminación RGB y diseño compacto</field>
+		<field name="ean_13">8435670048377</field>
+		<field name="categoria_id">4</field>
+		<field name="proveedor_id">6</field>
+		<field name="precio_coste">69.99</field>
+		<field name="precio_venta">79.99</field>
+		<field name="stock">15</field>
+		<field name="stock_min">8</field>
+		<field name="stock_max">25</field>
+		<field name="estado">Activo</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="nombre">Disco duro externo SSD</field>
+		<field name="descripcion">Disco duro externo SSD de 500 GB con interfaz USB 3.0 y alta velocidad de transferencia de datos</field>
+		<field name="ean_13">8479650032149</field>
+		<field name="categoria_id">5</field>
+		<field name="proveedor_id">7</field>
+		<field name="precio_coste">59.99</field>
+		<field name="precio_venta">69.99</field>
+		<field name="stock">20</field>
+		<field name="stock_min">10</field>
+		<field name="stock_max">30</field>
+		<field name="estado">En Promoción</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="nombre">Router Wi-Fi 6 AX</field>
+		<field name="descripcion">Router Wi-Fi 6 AX con tecnología de doble banda, cobertura ampliada y mayor velocidad de conexión</field>
+		<field name="ean_13">8479650032150</field>
+		<field name="categoria_id">3</field>
+		<field name="proveedor_id">8</field>
+		<field name="precio_coste">99.99</field>
+		<field name="precio_venta">129.99</field>
+		<field name="stock">15</field>
+		<field name="stock_min">8</field>
+		<field name="stock_max">25</field>
+		<field name="estado">Activo</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="nombre">Tableta gráfica digital</field>
+		<field name="descripcion">Tableta gráfica digital con lápiz sensible a la presión, ideal para dibujar, pintar y editar fotos</field>
+		<field name="ean_13">8435670048378</field>
+		<field name="categoria_id">4</field>
+		<field name="proveedor_id">9</field>
+		<field name="precio_coste">99.99</field>
+		<field name="precio_venta">149.99</field>
+		<field name="stock">10</field>
+		<field name="stock_min">5</field>
+		<field name="stock_max">15</field>
+		<field name="estado">En Reposición</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	</table_data>
+	<table_structure name="proveedores">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="nombre" Type="varchar(40)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="direccion" Type="varchar(50)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="poblacion" Type="varchar(50)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="c_postal" Type="char(5)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="provincia" Type="varchar(50)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="nif" Type="char(9)" Null="YES" Key="UNI" Default="NULL" Extra="" Comment="" />
+		<field Field="telefono" Type="char(9)" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="movil" Type="char(9)" Null="YES" Key="UNI" Default="NULL" Extra="" Comment="" />
+		<field Field="email" Type="varchar(45)" Null="YES" Key="UNI" Default="NULL" Extra="" Comment="" />
+		<field Field="create_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<field Field="update_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<key Table="proveedores" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="10" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="proveedores" Non_unique="0" Key_name="nif" Seq_in_index="1" Column_name="nif" Collation="A" Cardinality="10" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="proveedores" Non_unique="0" Key_name="movil" Seq_in_index="1" Column_name="movil" Collation="A" Cardinality="10" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="proveedores" Non_unique="0" Key_name="email" Seq_in_index="1" Column_name="email" Collation="A" Cardinality="10" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="proveedores" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="10" Avg_row_length="1638" Data_length="16384" Max_data_length="0" Index_length="49152" Data_free="0" Auto_increment="11" Create_time="2024-04-12 09:05:08" Update_time="2024-04-12 09:05:08" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="proveedores">
+	<row>
+		<field name="id">1</field>
+		<field name="nombre">Empresa Suministros S.A.</field>
+		<field name="direccion">Calle Mayor, 10</field>
+		<field name="poblacion">Sevilla</field>
+		<field name="c_postal">41001</field>
+		<field name="provincia">Sevilla</field>
+		<field name="nif">A12345678</field>
+		<field name="telefono">954321000</field>
+		<field name="movil">654321000</field>
+		<field name="email">empresa.suministros@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="nombre">Comercial Pérez S.L.</field>
+		<field name="direccion">Calle Real, 55</field>
+		<field name="poblacion">Córdoba</field>
+		<field name="c_postal">14001</field>
+		<field name="provincia">Córdoba</field>
+		<field name="nif">B23456789</field>
+		<field name="telefono">912345678</field>
+		<field name="movil">612345678</field>
+		<field name="email">comercial.perez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="nombre">Distribuciones González S.L.</field>
+		<field name="direccion">Gran Vía, 2</field>
+		<field name="poblacion">Málaga</field>
+		<field name="c_postal">29001</field>
+		<field name="provincia">Málaga</field>
+		<field name="nif">C34567890</field>
+		<field name="telefono">934567890</field>
+		<field name="movil">634567890</field>
+		<field name="email">distribuciones.gonzalez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="nombre">Proveedor López S.C.P.</field>
+		<field name="direccion">Plaza Mayor, 8</field>
+		<field name="poblacion">Granada</field>
+		<field name="c_postal">18001</field>
+		<field name="provincia">Granada</field>
+		<field name="nif">D45678901</field>
+		<field name="telefono">998765432</field>
+		<field name="movil">698765432</field>
+		<field name="email">proveedor.lopez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="nombre">Materiales Ruiz S.A.</field>
+		<field name="direccion">Calle del Sol, 12</field>
+		<field name="poblacion">Jaén</field>
+		<field name="c_postal">23001</field>
+		<field name="provincia">Jaén</field>
+		<field name="nif">E56789012</field>
+		<field name="telefono">987654321</field>
+		<field name="movil">687654321</field>
+		<field name="email">materiales.ruiz@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="nombre">Ferretería Gómez S.L.</field>
+		<field name="direccion">Paseo de la Castellana, 90</field>
+		<field name="poblacion">Madrid</field>
+		<field name="c_postal">28001</field>
+		<field name="provincia">Madrid</field>
+		<field name="nif">F67890123</field>
+		<field name="telefono">976543210</field>
+		<field name="movil">676543210</field>
+		<field name="email">ferreteria.gomez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="nombre">Electricidad Martín S.C.P.</field>
+		<field name="direccion">Calle de Atocha, 15</field>
+		<field name="poblacion">Barcelona</field>
+		<field name="c_postal">08001</field>
+		<field name="provincia">Barcelona</field>
+		<field name="nif">G78901234</field>
+		<field name="telefono">965432109</field>
+		<field name="movil">665432109</field>
+		<field name="email">electricidad.martin@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="nombre">Construcción González S.L.</field>
+		<field name="direccion">Avenida del Rey Juan Carlos I, 3</field>
+		<field name="poblacion">Valencia</field>
+		<field name="c_postal">46001</field>
+		<field name="provincia">Valencia</field>
+		<field name="nif">H89012345</field>
+		<field name="telefono">954321001</field>
+		<field name="movil">654321001</field>
+		<field name="email">construccion.gonzalez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="nombre">Suministros Ruiz S.A.</field>
+		<field name="direccion">Calle de Gran Vía, 50</field>
+		<field name="poblacion">Bilbao</field>
+		<field name="c_postal">48001</field>
+		<field name="provincia">Bilbao</field>
+		<field name="nif">I90123456</field>
+		<field name="telefono">943210009</field>
+		<field name="movil">643210009</field>
+		<field name="email">suministros.ruiz@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="nombre">Materiales Gutiérrez S.L.</field>
+		<field name="direccion">Paseo de la Constitución, 20</field>
+		<field name="poblacion">Valladolid</field>
+		<field name="c_postal">47001</field>
+		<field name="provincia">Valladolid</field>
+		<field name="nif">J01234567</field>
+		<field name="telefono">932100098</field>
+		<field name="movil">632100098</field>
+		<field name="email">materiales.gutierrez@email.com</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	</table_data>
+	<table_structure name="ventas">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="cliente_id" Type="int(10) unsigned" Null="YES" Key="MUL" Default="NULL" Extra="" Comment="" />
+		<field Field="fecha" Type="date" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="importe_bruto" Type="decimal(10,2)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="importe_iva" Type="decimal(10,2)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="importe_total" Type="decimal(10,2)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="estado" Type="enum('Realizado','Presupuesto','En Preparación','Enviado','Entregado','Facturado','Pagado','Cancelado','Devuelto','Cerrado')" Null="YES" Key="" Default="NULL" Extra="" Comment="" />
+		<field Field="create_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<field Field="update_at" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="" Comment="" />
+		<key Table="ventas" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="ventas" Non_unique="1" Key_name="cliente_id" Seq_in_index="1" Column_name="cliente_id" Collation="A" Cardinality="2" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="ventas" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="2" Avg_row_length="8192" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="3" Create_time="2024-04-12 09:05:08" Update_time="2024-04-12 09:05:08" Collation="utf8mb4_general_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="ventas">
+	<row>
+		<field name="id">1</field>
+		<field name="cliente_id">3</field>
+		<field name="fecha">2024-04-01</field>
+		<field name="importe_bruto">406.00</field>
+		<field name="importe_iva">85.26</field>
+		<field name="importe_total">491.26</field>
+		<field name="estado">Realizado</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="cliente_id">2</field>
+		<field name="fecha">2024-03-01</field>
+		<field name="importe_bruto">119.93</field>
+		<field name="importe_iva">235.19</field>
+		<field name="importe_total">1355.12</field>
+		<field name="estado">Realizado</field>
+		<field name="create_at">2024-04-12 09:05:08</field>
+		<field name="update_at">2024-04-12 09:05:08</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>
